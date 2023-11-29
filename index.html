@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+    <div class="header">
+        <div class="header1">
+            <div class = "header-button" onclick="showContent('about-content', this)">
+                <img src="about.png" alt="About">
+            </div>
+            <div class = "header-button selected" onclick="showContent('portfolio-content', this)">
+                <img src="portfolio.png" alt="Portfolio">
+            </div>
+        </div>
+        <div class="header2">
+            <div class = "header-button" onclick="showContent('shop-content', this)">
+                <img src="shop.png" alt="Shop">
+            </div>
+            <div class = "header-button" onclick="showContent('contact-content', this)">
+                <img src="contact.png" alt="Contact">
+            </div>
+        </div>
+    </div>
+    <img id="logo" src="logo.png" alt="8-Bit Adventurer">
+
+    <div id="about-content" class="content">About Content</div>
+    <div id="portfolio-content" class="content" style="display: block;">
+        <div class="gallery">
+            <div class="column">
+                <img src="bigclimbers.png" alt="Work 1">
+                <img src="bigphoto.png" alt="Work 2">
+                <img src="mountainbig.png" alt="Work 3">
+            </div>
+            <div class="column">
+                <img src="bigfire.png" alt="Work 4">
+                <img src="salalbig.png" alt="Work 5">
+                <img src="shoresbig.png" alt="Work 6">
+            </div>
+            <div class="column">
+                <img src="karmabig.png" alt="Work 7">
+                <img src="sunsetbig.png" alt="Work 8">
+                <img src="snagbig.gif" alt="Work 9">
+            </div>
+        </div>
+    </div>
+    <div id="shop-content" class="content">Shop Content</div>
+    <div id="contact-content" class="content">Contact Content</div>
+
+    <script src="scripts.js"></script>
+</body>
