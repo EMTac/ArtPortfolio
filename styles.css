@@ -1,5 +1,7 @@
-body {
+html, body {
     background-color: #1c061c;
+    height: 100%;
+    margin: 0;
 }
 
 #climbers {
@@ -10,7 +12,7 @@ body {
 #logo {
     position:absolute;
     image-rendering: crisp-edges;
-    z-index: 999;
+    z-index: 2;
     height: 120px;
     top: 0px;
     left:50%;
@@ -61,6 +63,7 @@ body {
     height:100%;
     width: 50%;
     transition: background-color 0.3s ease;
+    cursor: pointer;
 }
 
 .header-button img {
@@ -71,7 +74,8 @@ body {
     display: block;
 }
 
-.header-button:hover {
+.header-button:hover,
+.controls button:hover {
     background-color: #1c061c;
 }
 
@@ -103,4 +107,96 @@ body {
     width: 100%;
     height: auto;
     margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index:99999;
+    align-items: center;
+    justify-content: center;
+}
+
+.popup img {
+    image-rendering: crisp-edges;
+    display: block;
+    margin: 20px auto;
+    z-index:3;
+}
+
+.popup-details {
+    color: #fff;
+    text-align: center;
+}
+
+.close {
+    display: none;
+    position: fixed;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+    z-index:99999999;
+}
+
+.controls {
+    display: none;
+    position: fixed;
+    bottom: 3%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index:99999999;
+}
+
+.controls button {
+    padding: 5px;
+    width:50px;
+    height: 50px;
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: bold;
+    background-color: #4d2f2f;
+    border: 1px solid #ffffff;
+    cursor: pointer;
+}
+
+.draggable {
+    cursor: grab;
+}
+
+.dragging {
+    cursor: grabbing;
+}
+
+.image-container {
+    position: relative;
+    display: inline-block;
+}
+
+.animated-gif {
+    display: none;
+}
+
+.image-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.gif-label {
+    position: absolute;
+    display: block;
+    top: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 5px;
+    margin: 5px;
+    font-size: 12px;
+    font-weight: bold;
 }
