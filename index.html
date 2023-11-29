@@ -25,23 +25,50 @@
 
     <div id="about-content" class="content">About Content</div>
     <div id="portfolio-content" class="content" style="display: block;">
-        <div class="gallery">
+        <div class="gallery" onclick="openPopup(event)">
             <div class="column">
                 <img src="bigclimbers.png" alt="Work 1">
                 <img src="bigphoto.png" alt="Work 2">
                 <img src="mountainbig.png" alt="Work 3">
+                <img src="witcherbig.png" alt="Work 3">
+                <img src="adamsbig.png" alt="Work 3">
             </div>
             <div class="column">
                 <img src="bigfire.png" alt="Work 4">
                 <img src="salalbig.png" alt="Work 5">
                 <img src="shoresbig.png" alt="Work 6">
+                <div class="image-container" onmouseover="toggleImage(this, true)" onmouseout="toggleImage(this, false)">
+                    <div class="image-wrapper">
+                        <img class="still-image" src="2023still.png" alt="Still Image">
+                        <img class="animated-gif" src="2023big.gif" alt="Animated GIF">
+                        <div class="gif-label">GIF</div>
+                    </div>
+                </div>                
+                <img src="2022big.png" alt="Work 3">
+                <img src="potsbig.png" alt="Work 3">
             </div>
             <div class="column">
                 <img src="karmabig.png" alt="Work 7">
                 <img src="sunsetbig.png" alt="Work 8">
-                <img src="snagbig.gif" alt="Work 9">
+                <div class="image-container" onmouseover="toggleImage(this, true)" onmouseout="toggleImage(this, false)">
+                    <img class="still-image" src="snagstill.png" alt="Still Image">
+                    <img class="animated-gif" src="snagbig.gif" alt="Animated GIF">
+                    <div class="gif-label">GIF</div>
+                </div>
+                <img src="doombig.png" alt="Work 3">
+                <img src="dragontailbig.png" alt="Work 3">
             </div>
         </div>
+    </div>
+    <div id="popup" class="popup draggable">
+        <img id="popup-image" src="" alt="Full-screen Image">
+        <div id="popup-details" class="popup-details">
+        </div>
+    </div>
+    <span class="close" id="close" onclick="closePopup()">&times;</span>
+    <div class="controls" id="controls">
+        <button onclick="adjustImageSize('enlarge')">+</button>
+        <button onclick="adjustImageSize('shrink')">-</button>
     </div>
     <div id="shop-content" class="content">Shop Content</div>
     <div id="contact-content" class="content">Contact Content</div>
