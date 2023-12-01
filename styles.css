@@ -1,58 +1,100 @@
 html, body {
-    background-color: #1c061c;
     height: 100%;
     margin: 0;
+    background-color: #302028;
 }
 
-#climbers {
-    top:0px;
-    width:100%;
+body {
+    display: flex;
+    flex-direction: column;
 }
 
 #logo {
     position:absolute;
     image-rendering: crisp-edges;
     z-index: 2;
-    height: 120px;
+    height: 171.95px;
     top: 0px;
     left:50%;
     transform: translateX(-50%);
-    border: 2px solid white;
+    z-index: 9999999;
 }
 
 .header {
+    flex: 0 0 171.95px;
+    image-rendering: crisp-edges;
     position:relative;
     display: flex;
+    z-index: 1;
+    overflow: hidden;
 }
+.header-background {
+    image-rendering: crisp-edges;
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    z-index: 2;
+}
+
+.center {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.top-space {
+    flex: 0 0 28.66px;
+}
+
+.header-content {
+    background-color: #75422f;
+    flex: 0 0 57.32px;
+}
+
+.bottom-space {
+    flex: 0 0 85.98px;
+}
+
+#header-left {
+    background: url('header-left.png') no-repeat;
+    background-size: contain;
+    flex: 0 0 358.23px;
+}
+
+#header-right {
+    background: url('header-right.png') no-repeat;
+    background-size: contain;
+    flex: 0 0 358.23px;
+}
+
+/* .header img {
+    width:100%;
+    height: auto;
+} */
 
 .header1 {
     display:inline-block;
-    position: relative;
+    position: absolute;
     display: flex;
-    top: 10px;
-    /* justify-content: center; */
+    top: 28.66px;
     align-items: center;
-    background-color: #4d2f2f;
-    width: calc(50% - 91px);
-    height: 60px;
-    z-index: 1;
-    border: 2px solid white;
-    left:0px;
+    width: calc(50% - 180.55px);
+    height: 57.32px;
+    z-index: 3;
+    left:54.45px;
 }
 
 .header2 {
     display:inline-block;
-    position: relative;
+    position: absolute;
     display: flex;
-    top: 10px;
+    top: 28.66px;
     justify-content: flex-end;
     align-items: center;
-    background-color: #4d2f2f;
-    width: calc(50% - 92.85px);
-    height: 60px;
-    z-index: 1;
-    border: 2px solid white;
-    margin-left: 177.7px;
+    width: calc(50% - 180.55px);
+    height: 57.32px;
+    z-index: 3;
+    right: 54.45px;
 }
 
 .header-button {
@@ -74,19 +116,91 @@ html, body {
     display: block;
 }
 
-.header-button:hover,
-.controls button:hover {
-    background-color: #1c061c;
+.header-button:hover {
+    /* background-color: rgba(28, 6, 28, 0.5); */
+    border-top: 2px solid #d468a3;
+    border-bottom: 2px solid #d468a3;
+}
+
+.controls button:hover,
+#info-button:hover {
+    background-color: #302028; 
 }
 
 .header-button.selected {
-    background-color: #d468a3;
+    /* background-color: rgba(212, 104, 163, 0.5); */
+    border-top: 2px solid #ffffff;
+    border-bottom: 2px solid #ffffff;
 }
 
 .content {
     display: none;
     color: #ffffff;
-    margin-top: 20px;
+}
+
+.draggable {
+    cursor: grab;
+}
+
+.dragging {
+    cursor: grabbing;
+}
+
+.image-container {
+    position: relative;
+    display: inline-block;
+}
+
+.animated-gif {
+    display: none;
+}
+
+.image-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.gif-label {
+    position: absolute;
+    display: block;
+    top: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 5px;
+    margin: 5px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+#about-content,
+#shop-content,
+#contact-content {
+    display: flex;
+    flex: 0 0 100%;
+}
+
+#portfolio-content {
+    display: flex;
+}
+
+.background-left {
+    image-rendering: crisp-edges;
+    justify-content: center;
+    flex: 0 0 34.39px;
+    background: url('background-left.png') repeat-y;
+    background-size: contain;
+}
+
+.background-right {
+    image-rendering: crisp-edges;
+    justify-content: center;
+    flex: 0 0 34.39px;
+    background: url('background-right.png') repeat-y;
+    background-size: contain;
+}
+
+.space {
+    flex: 0 0 20.06px;
 }
 
 .gallery {
@@ -130,9 +244,16 @@ html, body {
     z-index:3;
 }
 
-.popup-details {
+.popup-title {
+    position: fixed;
     color: #fff;
+    font-size: 48px;
+    font-family: 'Pixelify Sans', sans-serif;
+    width: 100%;
+    height: 10%;
+    top: 10px;
     text-align: center;
+    z-index:99999999;
 }
 
 .close {
@@ -162,41 +283,40 @@ html, body {
     color: #ffffff;
     font-size: 24px;
     font-weight: bold;
-    background-color: #4d2f2f;
-    border: 1px solid #ffffff;
+    background-color: #75422f;
+    border: 2px solid #ffffff;
     cursor: pointer;
 }
 
-.draggable {
-    cursor: grab;
+/* #color-info-container {
+    position: fixed;
+    right: 20px;
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    width: 50px;
+    z-index: 9999999;
 }
 
-.dragging {
-    cursor: grabbing;
-}
-
-.image-container {
-    position: relative;
+.color-square {
     display: inline-block;
-}
+    width: 10px;
+    height: 10px;
+} */
 
-.animated-gif {
+#info-button {
+    position: fixed;
+    left: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #75422f;
+    color: white;
+    font-size: 20px;
+    padding: 10px;
+    border-top: 2px solid #ffffff;
+    border-right: 2px solid #ffffff;
+    border-bottom: 2px solid #ffffff;
+    cursor: pointer;
+    z-index: 999;
     display: none;
-}
-
-.image-wrapper {
-    position: relative;
-    display: inline-block;
-}
-
-.gif-label {
-    position: absolute;
-    display: block;
-    top: 0;
-    right: 0;
-    background-color: rgba(0, 0, 0, 0.8);
-    padding: 5px;
-    margin: 5px;
-    font-size: 12px;
-    font-weight: bold;
 }
