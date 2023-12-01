@@ -56,13 +56,13 @@ body {
 }
 
 #header-left {
-    background: url('header-left.png') no-repeat;
+    background: url('resources/header-left.png') no-repeat;
     background-size: contain;
     flex: 0 0 358.23px;
 }
 
 #header-right {
-    background: url('header-right.png') no-repeat;
+    background: url('resources/header-right.png') no-repeat;
     background-size: contain;
     flex: 0 0 358.23px;
 }
@@ -175,7 +175,7 @@ body {
 #about-content,
 #shop-content,
 #contact-content {
-    display: flex;
+    display: none;
     flex: 0 0 100%;
 }
 
@@ -187,7 +187,7 @@ body {
     image-rendering: crisp-edges;
     justify-content: center;
     flex: 0 0 34.39px;
-    background: url('background-left.png') repeat-y;
+    background: url('resources/background-left.png') repeat-y;
     background-size: contain;
 }
 
@@ -195,7 +195,7 @@ body {
     image-rendering: crisp-edges;
     justify-content: center;
     flex: 0 0 34.39px;
-    background: url('background-right.png') repeat-y;
+    background: url('resources/background-right.png') repeat-y;
     background-size: contain;
 }
 
